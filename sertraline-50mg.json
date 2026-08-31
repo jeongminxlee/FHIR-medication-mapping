@@ -2,12 +2,13 @@
     "resourceType": "MedicationRequest",
     "status": "active",
     "intent": "order",
+    "authoredOn": "2026-08-31T15:53:00+01:00",
     "courseOfTherapyType": {
         "coding": [
             {
-                "code": "acute",
                 "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
-                "display": "Short course (acute) therapy"
+                "code": "continuous",
+                "display": "Continuous long term therapy"
             }
         ]
     },
@@ -15,8 +16,8 @@
         "coding": [
             {
                 "system": "https://dmd.nhs.uk",
-                "code": "39732411000001106",
-                "display": "Amoxicillin 500mg capsules"
+                "code": "39704111000001102",
+                "display": "Sertraline 50mg tablets"
             }
         ]
     },
@@ -25,23 +26,19 @@
     },
     "dosageInstruction": [
         {
-            "text": "One capsule three times a day for 7 days",
+            "text": "One tablet daily",
             "timing": {
                 "repeat": {
-                    "frequency": 3,
+                    "frequency": 1,
                     "period": 1,
-                    "periodUnit": "d",
-                    "boundsDuration": {
-                        "value": 7,
-                        "unit": "d"
-                    }
+                    "periodUnit": "d"
                 }
             },
             "doseAndRate": [
                 {
                     "doseQuantity": {
                         "value": 1,
-                        "unit": "capsule"
+                        "unit": "tablet"
                     }
                 }
             ]
@@ -49,12 +46,13 @@
     ],
     "dispenseRequest": {
         "quantity": {
-            "value": 21,
-            "unit": "capsule"
+            "value": 28,
+            "unit": "tablet"
         },
-        "expectedSupplyDuration" : {
-            "value": 7,
-            "unit": "d"
+        "numberOfRepeatsAllowed": 5,
+        "expectedSupplyDuration": {
+            "value": 4,
+            "unit": "wk"
         }
     }
 }

@@ -41,7 +41,7 @@ Paracetamol 500mg tablets. One to two tablets every four to six hours when requi
 
 Decisions:
 
-- **PRN (as needed)** Dropped courseOfTherapyType. PRN is not a course of therapy. 
+- **PRN (as needed).** Dropped `courseOfTherapyType`. PRN is not a course of therapy. 
 
 - **Two ranges, not two numbers.** Both the dose (1–2 tablets) and
   the interval (every 4–6 hours) are ranges. These use `doseRange`
@@ -67,5 +67,12 @@ Decisions:
   four to six. Nothing in FHIR validates the two against each
   other. A human reading the text would never have caught it; a
   system acting on the structure could have dosed hourly.
+
+### Sertraline 50mg tablets then Sertraline 100mg tablets (One regimen)
+Sertraline 50mg tablets, one tablet daily. After four weeks, increased to 100mg daily.
+
+Decisions:
+
+
 
 *(in progress)*
