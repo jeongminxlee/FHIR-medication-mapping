@@ -1,0 +1,51 @@
+{
+    "resourceType": "MedicationRequest",
+    "status": "active",
+    "intent": "order",
+    "courseOfTherapyType": {
+        "coding": [
+            {
+                "code": "acute",
+                "display": "Short course (acute) therapy"
+            }
+        ]
+    },
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "https://dmd.nhs.uk",
+                "code": "",
+                "display": "Amoxicillin 500mg capsules"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/example"
+    },
+    "dosageInstruction": [
+        {
+            "text": "One capsule three times a day",
+            "timing": {
+                "repeat": {
+                    "frequency": 3,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "boundsDuration": {
+                        "value": 7,
+                        "unit": "d"
+                    }
+                }
+            }
+        }
+    ],
+    "dispenseRequest": {
+        "quantity": {
+            "value": 21,
+            "unit": "capsule"
+        },
+        "boundsDuration": {
+            "value": 7,
+            "unit": "d"
+        }
+    }
+}
