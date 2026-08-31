@@ -1,0 +1,13 @@
+{
+  "resourceType": "Patient",
+  "identifier": [{
+    "system": "https://fhir.nhs.uk/Id/nhs-number",
+    "value": "9999999999"
+  }],
+  "name": [{
+    "family": "Example",
+    "given": ["Test"]
+  }],
+  "gender": "female",
+  "birthDate": "1985-03-14"
+}
