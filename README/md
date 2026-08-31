@@ -1,0 +1,71 @@
+# FHIR medication mapping
+
+Worked examples mapping common UK prescriptions to FHIR R4
+MedicationRequest resources, using dm+d codes.
+
+Written by a student pharmacist learning FHIR. Each example was chosen
+because it breaks the mapping in a different way.
+
+## Examples
+
+### Amoxicillin 500mg capsules
+Acute course: one capsule three times a day for 7 days, 21 supplied.
+
+Decisions:
+
+- **VMP, not AMP.** dm+d codes products at three levels — substance
+  (VTM), generic product (VMP), and specific manufacturer's product
+  (AMP). Used the VMP code (39732411000001106) because the
+  prescription specifies a generic product (*non-proprietary*), not a brand.
+
+- **dm+d system URI, not SNOMED.** dm+d codes are SNOMED CT
+  identifiers, so `http://snomed.info/sct` would technically resolve.
+  Used `https://dmd.nhs.uk` because UK Core expects the dm+d URI for
+  medication resources.
+
+- **Codes are versioned.** The dm+d lookup returned two codes for
+  this product: 323510009, retired 26-05-2021, and the current
+  39732411000001106. Historical records will contain retired codes,
+  so a real mapping layer needs to handle supersession.
+
+- **boundsDuration, not expectedSupplyDuration.** Both could hold
+  "7 days", but they mean different things — how long to take it
+  versus how long the supply lasts. For amoxicillin they coincide;
+  for a 28-day repeat of an indefinite medication they don't.
+  Recorded the clinical fact, not the logistics one.
+
+
+### Paracetamol 500mg tablets
+Paracetamol 500mg tablets. One to two tablets every four to six hours when required. Maximum 8 tablets in 24 hours. Supply 32.
+
+
+Decisions:
+
+- **PRN (as needed)** Dropped courseOfTherapyType. PRN is not a course of therapy. 
+
+- **Two ranges, not two numbers.** Both the dose (1–2 tablets) and
+  the interval (every 4–6 hours) are ranges. These use `doseRange`
+  and `periodMax` respectively. Flattening either into a single
+  value silently changes the prescription.
+
+- **The maximum can't be derived.** With a variable dose and a
+  variable interval, the daily total isn't computable from the
+  other fields — 1 tablet every 6 hours and 2 tablets every 4 hours
+  are both valid readings, and they differ by a factor of three.
+  So `maxDosePerPeriod` has to be stated explicitly. It's a safety
+  limit, not an instruction, and it's the field a receiving system
+  needs most.
+
+- **Units coded where safety depends on them.** Doses and the
+  maximum use UCUM codes (`{tbl}` for tablets). The dispense
+  quantity uses free text, since ambiguity there is a supply
+  question rather than a dosing one.
+
+- **Free text and structured fields can disagree.** While writing
+  this I set `period: 1` instead of `period: 4`, making the
+  structured data read "every 1 to 6 hours" while `text` still said
+  four to six. Nothing in FHIR validates the two against each
+  other. A human reading the text would never have caught it; a
+  system acting on the structure could have dosed hourly.
+
+*(in progress)*
