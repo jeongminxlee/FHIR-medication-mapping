@@ -14,8 +14,7 @@ One capsule three times a day for 7 days, 21 supplied.
 - **VMP, not AMP.** dm+d codes products at three levels — substance
   (VTM), generic product (VMP), and specific manufacturer's product
   (AMP). Used the VMP code (39732411000001106) because the
-  prescription specifies a generic product (*non-proprietary*), not
-  a brand.
+  prescription specifies a generic product (*non-proprietary*), not a brand.
 
 - **dm+d system URI, not SNOMED.** dm+d codes are SNOMED CT
   identifiers, so `http://snomed.info/sct` would technically resolve.
@@ -27,11 +26,11 @@ One capsule three times a day for 7 days, 21 supplied.
   39732411000001106. Historical records will contain retired codes,
   so a real mapping layer needs to handle supersession.
 
-- **`boundsDuration` and `expectedSupplyDuration` are different
-  claims.** Both hold "7 days" here, which initially looked like
-  duplication. They aren't: `boundsDuration` is how long to take it,
-  a clinical instruction; `expectedSupplyDuration` is how long the
-  supply will last, which the spec explicitly calls an estimate
-  influenced by external factors. They coincide for a course taken as
-  directed and diverge as soon as it isn't — which is precisely the
-  case an adherence tool cares about. Kept both.
+- **boundsDuration and expectedSupplyDuration are different claims.**
+  Both hold "7 days" here, which initially looked like duplication.
+  They aren't: `boundsDuration` is how long to take it, a clinical
+  instruction; `expectedSupplyDuration` is how long the supply will
+  last, which the spec explicitly calls an estimate influenced by
+  external factors. They coincide for a course taken as directed and
+  diverge as soon as it isn't — which is precisely the case an
+  adherence tool cares about. Kept both.

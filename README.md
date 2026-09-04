@@ -15,6 +15,10 @@ has a note explaining the decisions and what FHIR couldn't express.
 | [Paracetamol](examples/medication-request/paracetamol.md) | MedicationRequest | PRN; dose and interval ranges; daily maximum |
 | [Sertraline](examples/medication-request/sertraline.md) | MedicationRequest | Dose change over time; two linked authorisations |
 
+More prescribing cases *in-progress* — inhalers (dose units and devices) and
+variable-dose regimens such as a steroid taper. Adherence resources
+(MedicationStatement, MedicationAdministration) after that.
+
 ## Conventions
 
 - **R4**, because UK Core profiles are R4.
