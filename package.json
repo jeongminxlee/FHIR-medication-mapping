@@ -4,8 +4,9 @@
   "description": "Worked examples mapping common UK prescriptions to FHIR R4 MedicationRequest resources, using dm+d codes.",
   "main": "index.js",
   "scripts": {
-  "test": "tsx --test src/*.test.ts"
-},
+    "test": "tsx --test src/*.test.ts",
+    "start": "tsx src/server.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeongminxlee/fhir-mapping.git"
@@ -20,8 +21,12 @@
   "homepage": "https://github.com/jeongminxlee/fhir-mapping#readme",
   "devDependencies": {
     "@medplum/fhirtypes": "^5.1.36",
+    "@types/express": "^5.0.6",
     "@types/node": "^26.4.1",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
