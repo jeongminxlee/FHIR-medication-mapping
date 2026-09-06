@@ -1,0 +1,44 @@
+{
+    "resourceType": "MedicationDispense",
+    "status": "completed",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "https://dmd.nhs.uk",
+                "code": "39704111000001102",
+                "display": "Sertraline 50mg tablets"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/example"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/sertraline-50mg"
+        }
+    ],
+    "quantity": {
+        "value": 28,
+        "unit": "tablet"
+    },
+    "daysSupply": {
+        "value": 28,
+        "unit": "d"
+    },
+    "whenPrepared": "2026-08-31T17:00:00+01:00",
+    "whenHandedOver": "2026-09-06T16:30:00+01:00",
+    "receiver" : [
+        { "reference": "Patient/example" }
+    ],
+    "performer": [
+        {
+            "actor": {
+                "reference": "Organization/pharmacy-example"
+            }
+        }
+    ],
+    "substitution": {
+        "wasSubstituted": false
+    }
+}

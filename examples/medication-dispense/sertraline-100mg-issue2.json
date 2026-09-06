@@ -1,0 +1,41 @@
+{
+    "resourceType": "MedicationDispense",
+    "status": "in-progress",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "https://dmd.nhs.uk",
+                "code": "39704011000001103",
+                "display": "Sertraline 100mg tablets"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/example"
+    },
+    "authorizingPrescription": [
+        {
+            "reference": "MedicationRequest/sertraline-100mg"
+        }
+    ],
+    "quantity": {
+        "value": 28,
+        "unit": "tablet"
+    },
+    "daysSupply": {
+        "value": 28,
+        "unit": "d"
+    },
+    "whenPrepared": "2026-09-28T17:00:00+01:00",
+
+    "performer": [
+        {
+            "actor": {
+                "reference": "Organization/pharmacy-example"
+            }
+        }
+    ],
+    "substitution": {
+        "wasSubstituted": false
+    }
+}
