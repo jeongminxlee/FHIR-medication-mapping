@@ -1,4 +1,4 @@
-import { mapToMedicationRequest } from './mapMedication';
+import { mapToMedicationRequest } from './mapRequest';
 
 const amoxicillin = mapToMedicationRequest({
   name: 'Amoxicillin 500mg capsules',

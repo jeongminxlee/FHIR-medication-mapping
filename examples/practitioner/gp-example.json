@@ -1,0 +1,12 @@
+{
+  "resourceType": "Practitioner",
+  "identifier": [{
+    "system": "https://fhir.hl7.org.uk/Id/gmc-number",
+    "value": "1234567"
+  }],
+  "name": [{
+    "family": "Example",
+    "given": ["Test"],
+    "prefix": ["Dr"]
+  }]
+}

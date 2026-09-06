@@ -72,11 +72,25 @@ variable-dose regimens such as a steroid taper, followed by more cases of Medica
 
 ## Code
 
-`src/mapMedication.ts` converts a simple prescription object into a
-valid MedicationRequest, including the clinical logic for whether a
-medication is an acute course or continuous therapy.
+`src/` contains a mapping function for each resource, converting a
+simple input object into valid FHIR:
+
+- `mapRequest.ts` — MedicationRequest
+- `mapDispense.ts` — MedicationDispense
+- `mapAdministration.ts` — MedicationAdministration
+- `mapStatement.ts` — MedicationStatement
+
+Three of them encode the clinical decision that resource turns on:
+whether a dose was taken, whether a supply was collected, whether the
+patient is still taking the medication. Tests cover those decisions.
+
+`mapRequest.ts` takes the course of therapy as an input rather than
+inferring it from the presence of a duration. A duration does not
+reliably imply an acute course — the sertraline example is continuous
+therapy with a 28-day bound.
 
     npm install
+    npm test
     npx tsx src/demo.ts
 
 ## Structure

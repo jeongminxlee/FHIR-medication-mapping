@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert';
-import { mapToMedicationRequest } from './mapMedication';
+import { mapToMedicationRequest } from './mapRequest';
 
 const amoxicillin = {
   name: 'Amoxicillin 500mg capsules',

@@ -1,0 +1,15 @@
+{
+  "resourceType": "RelatedPerson",
+  "patient": { "reference": "Patient/example" },
+  "relationship": [{
+    "coding": [{
+      "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "code": "DAUC",
+      "display": "daughter"
+    }]
+  }],
+  "name": [{
+    "family": "Example",
+    "given": ["Sample"]
+  }]
+}
