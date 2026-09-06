@@ -144,3 +144,9 @@ The hosted instance sleeps when idle. Allow up to a minute for the first request
 
     examples/     worked examples, grouped by resource type
     src/          mapping functions, tests, and the HTTP server
+
+## Licence
+
+Code in `src/` is MIT licensed. The worked examples in `examples/` and
+the accompanying notes are licensed CC BY 4.0 — reuse them freely with
+attribution.
