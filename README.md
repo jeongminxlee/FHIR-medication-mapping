@@ -77,7 +77,7 @@ valid MedicationRequest, including the clinical logic for whether a
 medication is an acute course or continuous therapy.
 
     npm install
-    npx tsx src/test.ts
+    npx tsx src/demo.ts
 
 ## Structure
 

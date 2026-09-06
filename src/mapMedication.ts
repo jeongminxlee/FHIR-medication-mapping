@@ -6,13 +6,12 @@ type PrescriptionInput = {
   doseAmount: number;
   doseUnit: string;
   frequency: number;
+  courseOfTherapy: 'acute' | 'continuous';
   durationDays?: number;
   quantity: number;
 };
 
 export function mapToMedicationRequest(med: PrescriptionInput): MedicationRequest {
-  const isAcute = med.durationDays !== undefined;
-
   const request: MedicationRequest = {
     resourceType: 'MedicationRequest',
     status: 'active',
@@ -20,8 +19,10 @@ export function mapToMedicationRequest(med: PrescriptionInput): MedicationReques
     courseOfTherapyType: {
       coding: [{
         system: 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy',
-        code: isAcute ? 'acute' : 'continuous',
-        display: isAcute ? 'Short course (acute) therapy' : 'Continuous long term therapy'
+        code: med.courseOfTherapy,
+        display: med.courseOfTherapy === 'acute'
+          ? 'Short course (acute) therapy'
+          : 'Continuous long term therapy'
       }]
     },
     medicationCodeableConcept: {
