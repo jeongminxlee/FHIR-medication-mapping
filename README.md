@@ -121,6 +121,25 @@ Endpoints: `/MedicationRequest`, `/MedicationDispense`,
 `/MedicationAdministration`, `/MedicationStatement`. Missing required
 fields return a 400 listing what is absent.
 
+
+A hosted instance is available at
+`https://fhir-medication-mapping-api.onrender.com`:
+
+    curl -X POST https://fhir-medication-mapping-api.onrender.com/MedicationRequest \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Amoxicillin 500mg capsules",
+        "dmdCode": "39732411000001106",
+        "doseAmount": 1,
+        "doseUnit": "capsule",
+        "frequency": 3,
+        "courseOfTherapy": "acute",
+        "durationDays": 7,
+        "quantity": 21
+      }'
+
+The hosted instance sleeps when idle. Allow up to a minute for the first request.
+
 ## Structure
 
     examples/     worked examples, grouped by resource type
