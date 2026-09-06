@@ -16,8 +16,8 @@ chain:
 |---|---|
 | MedicationRequest | What was ordered |
 | MedicationDispense | What was supplied |
-| MedicationAdministration | What was taken, dose by dose |
-| MedicationStatement | What was reported, in summary |
+| MedicationAdministration | What was taken |
+| MedicationStatement | What was reported by the patient |
 
 The first three are sequential: one order, one dispense, many
 administrations. MedicationStatement sits outside the chain. It is a report that the sequence took place, resulting
@@ -41,7 +41,7 @@ there to offer it.
 
 In community care, administration records do not exist at all. The data
 stops when the box leaves the pharmacy counter, and adherence is
-inferred from reorder frequency — which measures *collection*, not
+inferred from reorder frequency, which measures *collection*, not
 *consumption*.
 
 ## Examples
