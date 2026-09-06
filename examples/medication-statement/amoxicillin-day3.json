@@ -2,22 +2,30 @@
   "resourceType": "MedicationStatement",
   "status": "",
   "medicationCodeableConcept": {
-    "coding": [{
-      "system": "https://dmd.nhs.uk",
-      "code": "39732411000001106",
-      "display": "Amoxicillin 500mg capsules"
-    }]
+    "coding": [
+      {
+        "system": "https://dmd.nhs.uk",
+        "code": "39732411000001106",
+        "display": "Amoxicillin 500mg capsules"
+      }
+    ]
   },
-  "subject": { "reference": "Patient/example" },
+  "subject": {
+    "reference": "Patient/example"
+  },
   "effectivePeriod": {
     "start": "2026-08-31T00:00:00+01:00",
     "end": "2026-08-31T23:59:59+01:00"
   },
   "dateAsserted": "2026-08-31T22:00:00+01:00",
   "basedOn": [
-    { "reference": "MedicationRequest/amoxicillin" }
+    {
+      "reference": "MedicationRequest/amoxicillin"
+    }
   ],
-  "dosage": [{
-    "text": "One capsule three times a day"
-  }]
+  "dosage": [
+    {
+      "text": "One capsule three times a day"
+    }
+  ]
 }

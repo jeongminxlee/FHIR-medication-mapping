@@ -1,4 +1,4 @@
-# Dispensing a repeat
+# Dispensing a repeat prescription
 
 [`sertraline-50mg.json`](sertraline-50mg.json) ·
 [`sertraline-100mg-issue1.json`](sertraline-100mg-issue1.json) ·

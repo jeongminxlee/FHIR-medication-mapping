@@ -1,17 +1,16 @@
-# Recording doses taken and missed
+# Recording taken and missed doses
 
 [`amoxicillin-day3-dose1.json`](amoxicillin-day3-dose1.json) ·
 [`amoxicillin-day3-dose2.json`](amoxicillin-day3-dose2.json) ·
 [`amoxicillin-day3-dose3.json`](amoxicillin-day3-dose3.json)
 
-Day three of the amoxicillin course. The 8am dose was taken. The 2pm
+Day three of the amoxicillin course. 
+The 8am dose was taken. The 2pm
 dose was missed. The 10pm dose was taken.
 
 ## Decisions
 
-- **Only administration can record a non-event.** `status: not-done`
-  has no equivalent in MedicationStatement. It is deliberate, as a
-  statement describes a state.
+- **Administration can record a non-event dose.** `status: not-done`
 
 - **The vocabulary for why assumes refusal.** All eight SNOMED codes
   for `statusReason` are "drug declined by patient"; nothing for

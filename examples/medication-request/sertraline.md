@@ -7,7 +7,7 @@ Sertraline 50mg tablets, one tablet daily. After four weeks, increased to 100mg 
 
 ## Decisions
 
-- **Two resources, not one.** A MedicationRequest records a single
+- **Two resources.** A MedicationRequest records a single
   authorisation. Editing the dose in place would destroy the record
   of what was taken in the first four weeks.
 
@@ -17,7 +17,7 @@ Sertraline 50mg tablets, one tablet daily. After four weeks, increased to 100mg 
   `expectedSupplyDuration` — the patient returns when supply runs
   out — not from a limit on therapy.
 
-- **Completed vs active.** `MedicationRequest.status` is generally
+- **Completed verses active.** `MedicationRequest.status` is generally
   either `completed` or `active`. On completion of the four weeks of
   sertraline 50mg it was marked `completed`, and the 100mg is
   `active`. Note that `priorPrescription` is added to the 100mg,
