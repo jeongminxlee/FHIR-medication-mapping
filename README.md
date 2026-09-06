@@ -23,8 +23,7 @@ The first three are sequential: one order, one dispense, many
 administrations. MedicationStatement sits outside the chain. It is a report that the sequence took place, resulting
 in **a belief that the patient received the medication**.
 
-Two points of contention follow, and both matter for anything
-recording adherence.
+Two points of contention follow, and both touch on recording adherence.
 
 **1. Administration versus statement.** A patient logging a dose in an
 app is asserting a specific event, which is an administration. A
@@ -34,13 +33,13 @@ reports the event themselves. Factors, such as the patient's mental
 capacity and age, change how much the report can be relied upon.
 
 **2. Administration assumes a witness.** The structure allows a patient
-as `performer.actor`, so self-administration is anticipated. The
-vocabularies bolted onto it are not: the suggested codes for why a
+as `performer.actor`, so self-administration is anticipated. However, the
+vocabularies bolted onto it contradict this: the suggested codes for why a
 dose wasn't given are all forms of refusal, which assumes someone was
-there to offer it.
+there to administer it for the patient, meaning self-administration is not expected.
 
-In community care, administration records do not exist at all. The data
-stops when the box leaves the pharmacy counter, and adherence is
+In primary/community care, administration records do not exist. The data
+stops being recorded when the medication leaves the pharmacy counter. The adherence then is
 inferred from reorder frequency, which measures *collection*, not
 *consumption*.
 
@@ -58,7 +57,7 @@ variable-dose regimens such as a steroid taper, followed by MedicationStatement.
 
 ## Conventions
 
-- **R4**, because UK Core profiles are R4.
+- **R4.** UK Core profiles use R4.
 - **dm+d VMP codes** with the `https://dmd.nhs.uk` system URI.
 - **Durations in days**, following prescribing shorthand (5/7 is
   five days).
