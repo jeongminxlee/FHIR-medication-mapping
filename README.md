@@ -93,7 +93,35 @@ therapy with a 28-day bound.
     npm test
     npx tsx src/demo.ts
 
+## API
+
+The mappers are also exposed over HTTP. Start the server:
+
+    npm install
+    npm start
+
+Then POST a simple object to the endpoint for the resource you want:
+
+    curl -X POST http://localhost:3000/MedicationRequest \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Amoxicillin 500mg capsules",
+        "dmdCode": "39732411000001106",
+        "doseAmount": 1,
+        "doseUnit": "capsule",
+        "frequency": 3,
+        "courseOfTherapy": "acute",
+        "durationDays": 7,
+        "quantity": 21
+      }'
+
+The response is a valid FHIR R4 MedicationRequest.
+
+Endpoints: `/MedicationRequest`, `/MedicationDispense`,
+`/MedicationAdministration`, `/MedicationStatement`. Missing required
+fields return a 400 listing what is absent.
+
 ## Structure
 
     examples/     worked examples, grouped by resource type
-    src/          TypeScript mapping functions
+    src/          mapping functions, tests, and the HTTP server
